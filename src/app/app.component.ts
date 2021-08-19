@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Masonry } from 'ng-masonry-grid';
+import { Masonry } from './mansory';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ export class AppComponent {
   _masonry: Masonry;
   showMasonry = true;
 
-  animOptions = { animationEffect: 'effect-1' };
+  animOptions = { animationEffect: 'effect-2' };
 
   masonryItems: Array<any> = [];
 
@@ -39,7 +39,7 @@ export class AppComponent {
   }
 
   onNgMasonryInit($event: Masonry) {
-    console.log($event);
+    // console.log($event);
     this._masonry = $event;
   }
 

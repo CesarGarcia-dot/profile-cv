@@ -11,7 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
-import { NgMasonryGridModule } from 'ng-masonry-grid';
+import { NgMasonryGridModule } from './mansory/ng-mansory-grid.module';
 
 
 @NgModule({
