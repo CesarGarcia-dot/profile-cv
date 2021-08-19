@@ -1,10 +1,62 @@
-<mat-toolbar color="primary">
-  <span>My Resume</span>
+<mat-toolbar color="primary" class="nav-bar">
+  <span>MY RESUME</span>
   <span class="example-spacer"></span>
-  <button color="secondary" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-    <mat-icon>more_vert</mat-icon>
-  </button>
+  <button mat-button>PORTFOLIO</button>
+  <button mat-button>ABOUT</button>
+  <button mat-button>CONTACT</button>
 </mat-toolbar>
+
+<div class="spacer-div">
+</div>
+<div class="container">
+  <div fxLayout="column">
+    <div fxLayout="row" fxFill>
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title>
+            Cesar Garcia
+          </mat-card-title>
+          <mat-card-subtitle>
+            Developer Web
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="spacer-div">
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <h2 class="txt-projects">Portfolio</h2>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="row">
+
+      <ng-masonry-grid *ngIf="showMasonry"
+        [masonryOptions]="{ transitionDuration: '0.4s', gutter: 10, horizontalOrder: true }" [useAnimation]="true"
+        [useImagesLoaded]="true" (onNgMasonryInit)="onNgMasonryInit($event)" [scrollAnimationOptions]="animOptions">
+        <ng-masonry-grid-item id="{{'masonry-item-'+ (i)}}" *ngFor="let item of masonryItems; let i = index;">
+          <mat-card class="example-card">
+            <img mat-card-image [src]="item.src">
+            <mat-card-content>
+              <label>Item Number: {{item.count + 1}}</label>
+            </mat-card-content>
+          </mat-card>
+
+        </ng-masonry-grid-item>
+      </ng-masonry-grid>
+
+
+    </div>
+
+  </div>
+
+</div>
 
 
 
