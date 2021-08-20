@@ -16,9 +16,12 @@ export class AppComponent {
 
   masonryItems: Array<any> = [];
 
+  dateYear: Date = new Date();
+  dateYearTwo: any;
+
   constructor() {
 
-
+    this.dateYearTwo = this.dateYear.getFullYear();
     const len = 10; // length of grid items
 
     for (let i = 0; i < len; i++) {

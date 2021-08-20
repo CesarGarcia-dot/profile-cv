@@ -1,59 +1,130 @@
 <mat-toolbar color="primary" class="nav-bar">
-  <span>MY RESUME</span>
   <span class="example-spacer"></span>
-  <button mat-button>PORTFOLIO</button>
-  <button mat-button>ABOUT</button>
-  <button mat-button>CONTACT</button>
+  <a href="#portfolio" mat-button class="txt-nav-item">PORTFOLIO</a>
+  <a href="#" mat-button class="txt-nav-item">ABOUT</a>
+  <a href="#contact" mat-button class="txt-nav-item">CONTACT</a>
 </mat-toolbar>
+
+<div class="hero-presentation">
+  <div class="container" fxLayout="row" fxLayoutAlign="center center">
+    <div fxLayout="column">
+      <img src="../assets/build_product.svg" alt="">
+    </div>
+    <div fxLayout="column">
+      <div class="block-hero">
+        <h1 class="block-hero-title">Cesar Garcia</h1>
+        <mat-divider class="block-hero-divider"></mat-divider>
+        <p class="block-hero-description">
+          Web Developer - Back-End Developer - Front-End Developer
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="spacer-div">
 </div>
 <div class="container">
-  <div fxLayout="column">
-    <div fxLayout="row" fxFill>
-      <mat-card class="card">
-        <mat-card-header>
-          <mat-card-title>
-            Cesar Garcia
-          </mat-card-title>
-          <mat-card-subtitle>
-            Developer Web
-          </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <div class="spacer-div">
-    </div>
-    <div fxLayout="row" fxLayoutAlign="center center">
-      <h2 class="txt-projects">Portfolio</h2>
-    </div>
-    <mat-divider></mat-divider>
-  </div>
 
+  <div class="spacer-div">
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <h2 class="txt-projects" id="portfolio">Portfolio</h2>
+  </div>
+  <mat-divider class="mat-divider-page"></mat-divider>
 
   <ng-masonry-grid *ngIf="showMasonry"
     [masonryOptions]="{ transitionDuration: '0.4s', gutter: 10, horizontalOrder: true }" [useAnimation]="true"
     [useImagesLoaded]="true" (onNgMasonryInit)="onNgMasonryInit($event)" [scrollAnimationOptions]="animOptions">
     <ng-masonry-grid-item id="{{'masonry-item-'+ (i)}}" *ngFor="let item of masonryItems; let i = index;">
-      <mat-card class="example-card">
-        <img mat-card-image [src]="item.src">
-        <mat-card-content>
-          <label>Item Number: {{item.count + 1}}</label>
-        </mat-card-content>
-      </mat-card>
+      <img [src]="item.src">
+      <div class="box-mansonry-description">
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+          <p>CSS - HTML - JavaScript</p>
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+            <button mat-raised-button color="primary">CODE</button>
+            <button mat-raised-button color="primary">SITE</button>
+          </div>
+
+        </div>
+      </div>
 
     </ng-masonry-grid-item>
   </ng-masonry-grid>
 
+  <div class="spacer-div">
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <h2 class="txt-projects" id="contact">Contact</h2>
+  </div>
+  <mat-divider class="mat-divider-page"></mat-divider>
+  <div class="spacer-div">
+  </div>
+  <div fxLayout="column">
+    <form action="mailto:cesardeveloper8@gmail.com">
+      <mat-card>
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="space-around stretch">
+            <mat-form-field appearance="fill">
+              <mat-label>Full Name</mat-label>
+              <input type="text" matInput placeholder="Full Name">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Email Address</mat-label>
+              <input type="email" matInput placeholder="Email Address">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Message</mat-label>
+              <textarea matInput placeholder="Message"></textarea>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-raised-button color="primary" class="card-button-form-send">Send <mat-icon>send</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+
 </div>
-
-
+<div class="spacer-div">
+</div>
+<div class="sub-footer">
+  <div fxLayout="row" fxLayoutAlign="space-evenly">
+    <div fxLayout="column" fxLayoutAlign="center">
+      <h3 class="sub-footer-headers">LOCATION</h3>
+      <p class="lead">
+        Sonsonate, Sonsonate, El Salvador
+      </p>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center">
+      <h3 class="sub-footer-headers">AROUND THE WEB</h3>
+      <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="5px">
+        <a href="https://www.linkedin.com/in/cesar-garcia-62b340aa/" target="_blank" mat-fab color="primary"
+          aria-label="Linkedin">
+          <mat-icon>person</mat-icon>
+        </a>
+        <a href="https://github.com/CesarGarcia-dot" target="_blank" mat-fab color="primary" aria-label="GitHub">
+          <mat-icon>code</mat-icon>
+        </a>
+        <a href="https://t.me/JulioCesarDeveloper" target="_blank" mat-fab color="primary" aria-label="Telegram">
+          <mat-icon>telegram</mat-icon>
+        </a>
+      </div>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center">
+      <h3 class="sub-footer-headers">ABOUT</h3>
+      <p class="lead">
+        Web Developer <a href="#" style="color: teal;">@CesarGarcia</a>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="copyright">
+  <div class="container" style="padding-top: 4px;">
+    <small>Copyright © Cesar Garcia {{dateYearTwo}}</small>
+  </div>
+</div>
 
 <router-outlet></router-outlet>

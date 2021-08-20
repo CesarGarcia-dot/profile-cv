@@ -25,7 +25,113 @@
 
 .nav-bar{
   color: var(--bs-white);
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 1.75em;
+  font-weight: 700;
+  line-height: 1.5em;
   background-color: var(--bs-gray-dark);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.txt-nav-item{
+  color: var(--bs-white);
+  font-size: .70em;
+  font-weight: 500;
+  line-height: 1.5em;
+  background-color: var(--bs-gray-dark);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.txt-nav-item:hover{
+  color: var(--bs-teal);
+}
+
+.mat-form-field{
+  font-size: 28px;
+}
+
+.card-button-form-send{
+  height: 50px;
+  font-size: 25px;
+}
+
+
+
+.hero-presentation{
+  background-color: var(--bs-teal);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  .container{
+    height: 100%;
+  }
+  img{
+    width: 45rem;
+    height: 45rem;
+    vertical-align: middle;
+  }
+}
+
+.block-hero-title{
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+.block-hero-divider{
+  border-top: 8px solid #fff;
+  border-radius: 5px;
+  margin: 0 0 5px 0;
+}
+
+.mat-divider-page{
+  border-top: 8px solid #2c3e50;
+  border-radius: 5px;
+  margin: 0 0 5px 0;
+}
+
+.block-hero-description{
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.5em;
+}
+
+
+.box-mansonry-description{
+  padding: 10px 10px 10px 10px;
+}
+
+.sub-footer{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #2c3e50;
+  height: 142px;
+  color: #fff;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.copyright {
+  background-color: #1a252f;
+  height: 34px;
+  vertical-align: middle;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+}
+
+.sub-footer-headers{
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.2;
 }
