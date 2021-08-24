@@ -14,6 +14,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { NgMasonryGridModule } from './mansory/ng-mansory-grid.module';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -27,6 +28,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FlexLayoutModule,
     MatToolbarModule,
     MatIconModule,

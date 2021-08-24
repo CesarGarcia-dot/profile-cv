@@ -1,12 +1,13 @@
 <mat-toolbar color="primary" class="nav-bar">
   <span class="example-spacer"></span>
   <a href="#portfolio" mat-button class="txt-nav-item">PORTFOLIO</a>
-  <a href="#" mat-button class="txt-nav-item">ABOUT</a>
+  <a href="https://cesargarcia-dot.github.io/resume-cv-website/" target="_blank" mat-button
+    class="txt-nav-item">ABOUT</a>
   <a href="#contact" mat-button class="txt-nav-item">CONTACT</a>
 </mat-toolbar>
 
 <div class="hero-presentation">
-  <div class="container" fxLayout="row" fxLayoutAlign="center center">
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
     <div fxLayout="column">
       <img src="../assets/build_product.svg" alt="">
     </div>
@@ -24,7 +25,8 @@
 
 <div class="spacer-div">
 </div>
-<div class="container">
+
+<div>
 
   <div class="spacer-div">
   </div>
@@ -36,14 +38,14 @@
   <ng-masonry-grid *ngIf="showMasonry"
     [masonryOptions]="{ transitionDuration: '0.4s', gutter: 10, horizontalOrder: true }" [useAnimation]="true"
     [useImagesLoaded]="true" (onNgMasonryInit)="onNgMasonryInit($event)" [scrollAnimationOptions]="animOptions">
-    <ng-masonry-grid-item id="{{'masonry-item-'+ (i)}}" *ngFor="let item of masonryItems; let i = index;">
-      <img [src]="item.src">
+    <ng-masonry-grid-item id="{{'masonry-item-'+ (i)}}" *ngFor="let item of portfolios; let i = index;">
+      <img [src]="item.photo">
       <div class="box-mansonry-description">
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
-          <p>CSS - HTML - JavaScript</p>
+          <p>{{item.languages}}</p>
           <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-            <button mat-raised-button color="primary">CODE</button>
-            <button mat-raised-button color="primary">SITE</button>
+            <a href="{{item.codeUrl}}" target="_blank" mat-raised-button color="primary">CODE</a>
+            <a href="{{item.siteUrl}}" target="_blank" mat-raised-button color="primary">SITE</a>
           </div>
 
         </div>
@@ -91,7 +93,8 @@
 <div class="spacer-div">
 </div>
 <div class="sub-footer">
-  <div fxLayout="row" fxLayoutAlign="space-evenly">
+
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxLayout.md="column" fxLayoutAlign="space-evenly">
     <div fxLayout="column" fxLayoutAlign="center">
       <h3 class="sub-footer-headers">LOCATION</h3>
       <p class="lead">
@@ -116,15 +119,18 @@
     <div fxLayout="column" fxLayoutAlign="center">
       <h3 class="sub-footer-headers">ABOUT</h3>
       <p class="lead">
-        Web Developer <a href="#" style="color: teal;">@CesarGarcia</a>
+        Web Developer <a href="https://cesargarcia-dot.github.io/resume-cv-website/" target="_blank"
+          style="color: teal;">@CesarGarcia</a>
       </p>
     </div>
   </div>
 </div>
 <div class="copyright">
-  <div class="container" style="padding-top: 4px;">
+  <div style="padding-top: 4px;">
     <small>Copyright © Cesar Garcia {{dateYearTwo}}</small>
   </div>
 </div>
+
+
 
 <router-outlet></router-outlet>
