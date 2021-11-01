@@ -28,10 +28,10 @@ export class AppComponent {
     this.dateYearTwo = this.dateYear.getFullYear();
     const len = 10; // length of grid items
 
-    
+
   }
 
-  
+
 
   onNgMasonryInit($event: Masonry) {
     // console.log($event);
@@ -39,12 +39,7 @@ export class AppComponent {
   }
 
   getProjects() {
-    this.projectsService.getProjects().subscribe({
-      next: (data: any) => {
-        this.portfolios = data;
-      },
-      error: (er) => console.log(er)
-    })
+    this.portfolios = this.projectsService.getProjects();
   }
 
 }
