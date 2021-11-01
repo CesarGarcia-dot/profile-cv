@@ -12,7 +12,36 @@ export class AppComponent {
   count = 0;
   _masonry: Masonry;
   showMasonry = true;
-  portfolios: Portfolio[];
+  portfolios: Portfolio[] = [
+    {
+      "name": "Resume HTML and CSS",
+      "codeUrl": "https://github.com/CesarGarcia-dot/resume-cv-website",
+      "siteUrl": "https://cesargarcia-dot.github.io/resume-cv-website/",
+      "languages": "HTML - CSS - JavaScript",
+      "photo": "../../assets/images/resume.png"
+    },
+    {
+      "name": "Dating APP",
+      "codeUrl": "#",
+      "siteUrl": "https://github.com/CesarGarcia-dot/DatingAppNetCoreAngular",
+      "languages": "C# - HTML - CSS - Angular",
+      "photo": "../../assets/images/dating-app.png"
+    },
+    {
+      "name": "Audio Player with Angular",
+      "codeUrl": "https://github.com/CesarGarcia-dot/audio-player",
+      "siteUrl": "https://cesargarcia-dot.github.io/audio-player/",
+      "languages": "HTML - CSS - Angular - oAuth",
+      "photo": "../../assets/images/audio-player.png"
+    },
+    {
+      "name": "Kg & furniture accessories site",
+      "codeUrl": "#",
+      "siteUrl": "https://kgfurnitureaccessories.com/",
+      "languages": "Wordpress - HTML - CSS - JavaScript",
+      "photo": "../../assets/images/furniture-site.png"
+    }
+  ];
 
   animOptions = { animationEffect: 'effect-2' };
 
@@ -23,7 +52,7 @@ export class AppComponent {
 
   constructor(private projectsService: ProjectsService) {
 
-    this.getProjects();
+   
 
     this.dateYearTwo = this.dateYear.getFullYear();
     const len = 10; // length of grid items
@@ -38,8 +67,6 @@ export class AppComponent {
     this._masonry = $event;
   }
 
-  getProjects() {
-    this.portfolios = this.projectsService.getProjects();
-  }
+ 
 
 }
